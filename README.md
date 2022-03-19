@@ -11,7 +11,7 @@ Projeto da faculdade app CRM com site de cadastro.
  
  Esse projeto teve um período de desenvolvimento de 3 meses, no qual tratei algumas situações com diferentes alternativas, tanto no back quanto no front, no intuito de justamente trabalhar com diferentes soluções para uma mesma ação. Meu principal desafio na mesma foi o desenvolvimento com PHP puro, hoje trabalho com o Laravel e as facilidades de uma biblioteca não foram encontradas aqui.  
  
- A tela de agendamentos de forma proposital também não foi desenvolvida, entendi que até onde toquei a aplicação atenderia bem ao trabalho que estou para apresentar. Estou muito satisfeito com o que consegui tocar neste projeto, considerando o pouco tempo de experiência na área. Espero que seja fonte de aprendizado para quem assim como eu está em ínicio de jornada e como espaço de oportunidade para os que diferente de mim já tem experiência sufiencia para julgar com mais critério o código apresentado. 
+ A tela de agendamentos de forma proposital também não foi desenvolvida, entendi que até onde toquei a aplicação atenderia bem ao trabalho que estou para apresentar. Estou muito satisfeito com o que consegui tocar neste projeto, considerando o pouco tempo de experiência na área. Espero que seja fonte de aprendizado para quem assim como eu está em ínicio de jornada e como espaço de oportunidade para os que diferente de mim já tem experiência suficiente para julgar com mais critério o código apresentado. 
  
  Obrigado! 
  
