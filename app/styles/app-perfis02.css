@@ -1,0 +1,48 @@
+@import 'app01.css';
+
+.meu-perfil{
+   height:300px;
+   width:100%;
+   border-radius: 5px;
+}
+
+.img-perfil{
+    position:relative;
+    top: 10%;
+    height:220px;
+    width:220px;
+    left:20%;
+    border-radius:50%;
+    background-color:#f1ecec;
+    box-shadow: 1px 1px 8px 1px #000000;
+    cursor:pointer;
+}
+
+#form-usuario-logado {
+    margin: 30px 30px 10px 10px;
+}
+
+#form-usuario-logado label{
+  margin-top:5px;
+  margin-bottom: 0;
+}
+
+.confirma-senha{
+    display:none;
+}
+
+.atualiza-cadastro{
+    margin-top:12px;
+}
+
+.tabela-users{
+    margin-top: 5%;
+    border-radius: 15px;
+}
+
+.novo-usuario{
+    float:right;
+    margin-right: 30px;
+}
+
+

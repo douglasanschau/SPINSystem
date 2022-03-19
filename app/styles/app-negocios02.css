@@ -1,0 +1,55 @@
+@import 'app01.css';
+
+.main-app{
+    margin: 50px 20px;
+}
+
+.perfis-usuarios{
+    position:absolute; 
+    top:7px;
+    right: 15px;
+}
+
+.card-body{
+    margin: 0 15px;
+}
+
+.card-business{
+  width:20%;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+.etapa {
+    padding-top:10px;
+    height:50px !important;
+    background-color:rgba(37, 37, 175, 0.726);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.negocio{
+    height:auto;
+    padding: 15px;
+    text-align:center;
+    text-decoration:none;
+}
+
+.card-title {
+    text-transform: uppercase;
+    font-weight:lighter;
+}
+
+.add-business{
+    background-color: #c5c2c2;
+    height: 50px;
+    text-align:center;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.add-business:hover{
+    opacity: 0.5;
+    cursor:pointer;
+}
+

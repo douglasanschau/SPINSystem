@@ -1,0 +1,63 @@
+@import 'app01.css';
+
+
+.dashboards{
+    margin: 0;
+}
+
+.cards-dash{
+    height: 130px;
+    box-shadow: 1px 1px 4px #000000;
+    text-align:center;
+
+}
+
+.cards-dash:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+}
+
+.icons-dash {
+    font-size:45px;
+    padding:8px 0 1px 0;
+    position:relative;
+    top:10px;
+}
+
+.card-body{
+    font-size: 30px;
+    position:absolute;
+    top:50px;
+    left:40%;
+}
+
+.infos-home{
+    margin-top:5%; 
+    box-shadow: 0.5px 0.5px 2px  0.5px #000000; 
+    min-height:500px; 
+    background-color:#FFFFFF; 
+    border-radius:5px; 
+    padding:3%;
+}
+
+.coluna-atividades{
+    min-width:48%; 
+    margin:1%; 
+    padding:5%;
+}
+
+.icons-info{
+    font-size: 50px; 
+    position: relative; 
+    top:8px; 
+    margin-top: 5%;
+} 
+
+.atividades{ 
+     margin: 3% 15%;
+     font-family:sans-serif;
+}
+
+.progress{
+    margin-bottom:5px;
+}
