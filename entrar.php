@@ -13,9 +13,9 @@
      <header>
          <nav class='nav-principal'>
              <ul>
-                 <li><a href='home.html'>Home</a></li>
-                 <li><a href='planos.html'>Planos</a></li>
-                 <li><a href='contatenos.html'>Contate-nos</a></li>
+                <li><a href='./index.php'>Home</a></li>
+                <li><a href='./planos.php'>Planos</a></li>
+                <li><a href='./contato.php'>Contate-nos</a></li>
              </ul>
              <button class='cadastrese'>Cadastre-se</button>
          </nav>

@@ -25,7 +25,7 @@
     <body>
 
          <header>
-             <?php require_once('layouts.fixos/nav-principal.php') ?>
+             <?php require_once('layouts-fixos/nav-principal.php') ?>
          </header>
 
          
@@ -67,7 +67,7 @@
 
 
         <footer>
-                <?php  require_once('layouts.fixos/footer.php'); ?>
+                <?php  require_once('layouts-fixos/footer.php'); ?>
         </footer>
     </body>
     <?php require_once('modal/novo-produto.php'); ?>
