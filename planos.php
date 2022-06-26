@@ -6,7 +6,7 @@
        <link rel='stylesheet' href='styles/reset.css'>
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <link rel='stylesheet' href='styles/style-planos.css'>
+       <link rel='stylesheet' href='./assets/css/style-planos.css'>
        <title> Planos - Site</title>
    </head>
    <body>

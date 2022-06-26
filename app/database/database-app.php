@@ -1,5 +1,5 @@
 <?php 
-    require_once '../../database/database.class.php';
+    require_once '../database/database.class.php';
 
 
     class DatabaseApp extends PDO{

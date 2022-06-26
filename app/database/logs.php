@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../../database/database.class.php';
+require_once '../database/database.class.php';
 require_once('clients.php');
 
 class Logs extends PDO{

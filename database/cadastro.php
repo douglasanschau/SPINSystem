@@ -50,19 +50,13 @@ class Register {
     $register_admin = new Register();
     $new_user = $register_admin->register();
     if($new_user == false){
-        //session_start();
+        session_start();
         $_SESSION['user-cadastrado'] = true;
         header('Location:../cadastro.php');
-    } else{
-        //$user = $register->verifyUserAccess();
-        session_start();
-        $_SESSION['user'] = ['nome' => $access['name'], 'email' => $email, 'empresa' => $access['id'], 'acesso' =>  $access['admin'], 'id' => $access['id_user']];
-        header('Location:../app/index.php');
-        header('Location:http://localhost/faculdade/seminario/cadastrese.php');
     } else{
         $user = $register_admin->verifyUserAccess();
         session_start();
         $_SESSION['user'] = ['nome' => $access['name'], 'email' => $email, 'empresa' => $access['id'], 'acesso' =>  $access['admin'], 'id' => $access['id_user']];
-        header('Location:http://localhost/faculdade/seminario/app/home-app.php');
+        header('Location:../app/index.php');
     }
 ?>

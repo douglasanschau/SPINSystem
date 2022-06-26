@@ -6,8 +6,8 @@
        <link rel='stylesheet' href='styles/reset.css'>
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <link rel='stylesheet' href='styles/style.css'>
-       <link rel='stylesheet' href='styles/style-home.css'>
+       <link rel='stylesheet' href='./assets/css/style.css'>
+       <link rel='stylesheet' href='./assets/css/style-home.css'>
        <title> Home - Site</title>
    </head>
    <body>
@@ -24,7 +24,7 @@
      </header>
      <main >
         <section class='sobre-nos'>
-            <img src='imgs/cliente-img1.png' class='img-sobre-nos' alt='Imagem representativa de relação cliente-fornecedore com advento da tecnologia.'>
+            <img src='./assets/img/cliente-img1.png' class='img-sobre-nos' alt='Imagem representativa de relação cliente-fornecedore com advento da tecnologia.'>
 
             <h2 class='titulos'>Sobre nós</h2>
 
@@ -43,7 +43,7 @@
         <hr>
 
         <section class='beneficios'>
-            <img src='imgs/cliente-img2.png' class='img-beneficios' alt='Imagem mostra a construção de um relacionamento efetivo com o cliente.'>
+            <img src='./assets/img/cliente-img2.png' class='img-beneficios' alt='Imagem mostra a construção de um relacionamento efetivo com o cliente.'>
 
             <h2 class='titulos'>Benefícios</h2>
 

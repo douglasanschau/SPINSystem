@@ -6,7 +6,7 @@
        <link rel='stylesheet' href='styles/reset.css'>
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <link rel='stylesheet' href='styles/style-cadastrese.css'>
+       <link rel='stylesheet' href='./assets/css/style-cadastrese.css'>
        <title> Cadastre-se - Site</title>
    </head>
    <body>
@@ -46,7 +46,7 @@
        </section>
 
        <section class='section-infos'> 
-          <img class='imagem-experimente' src='imgs/experiment.png' alt='Imagem representa as dúvidas, satisfações e insatisfações da relação cliente-empresa.'>
+          <img class='imagem-experimente' src='./assets/img/experiment.png' alt='Imagem representa as dúvidas, satisfações e insatisfações da relação cliente-empresa.'>
 
           <p>Durante o período de experimente você tem 10 dias para conhecer as funcionalidades da nossa plataforma.</p>
 
