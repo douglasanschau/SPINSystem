@@ -72,15 +72,15 @@
     });
 
     $('.cadastrese').on('click', function(){
-      window.location.href= 'cadastrese.php';
+      window.location.href= './cadastro.php';
     });
 
     $('.entrar').on('click', function(){
-       window.location.href= 'entrar.php';
+       window.location.href= './entrar.php';
     });
 
     $('.aumente-vendas').on('click', function(){
-        window.location.href= 'cadastrese.php';
+        window.location.href= './cadastro.php';
     });
 </script>
 </html>

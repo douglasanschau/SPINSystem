@@ -6,7 +6,7 @@
   Nesta etapa o PHP e JavaScript foram usados com parcimônia, com validações simplistas. 
 
   > **Note**
-  > **OBSERVAÇÂO**: Ao incluir que não tem senha a ideia de uma aplicação CRM é enviar um e-mail de recuperação para o candidato, no projeto segui como se fosse essa a etapa, mas sem a parte de e-mail e colocando uma senha default no banco.
+  > Ao incluir que não tem senha a ideia de uma aplicação CRM é enviar um e-mail de recuperação para o candidato, no projeto segui como se fosse essa a etapa, mas sem a parte de e-mail e colocando uma senha default no banco.
 
   Já no app foquei na parte de desenvolvimento de fato, usei o bootstrap para facilitar o "visual" e tratei com mais atenção funções PHP e JavaScript (com Jquery), tornando a aplicação mais complexa. 
 

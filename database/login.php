@@ -12,11 +12,11 @@ class Login {
       if($response){
         session_start();
         $_SESSION['senha_alterada'] = true;
-        header('Location:https://localhost/seminario/entrar.php');
+        header('Location:../entrar.php');
       } else {
         session_start();
         $_SESSION['usuario_nao_encontrado'] = true;
-        header('Location:https://localhost/seminario/entrar.php');
+        header('Location:../entrar.php');
       }
     }
 
@@ -28,11 +28,11 @@ class Login {
           $_SESSION['user'] = ['nome' => $access['name'], 'email' => $email, 'empresa' => $access['id'], 'acesso' =>  $access['admin'], 'id' => $access['id_user'], 
                                'foto' => $access['photo'], 'telefone' => $access['phone'], 'cpf' => $access['cpf']];
 
-          header('Location:http://localhost/faculdade/seminario/app/home-app.php');
+          header('Location:../app/home-app.php');
       } else {
         session_start();
         $_SESSION['usuario_nao_encontrado'] = true;
-        header('Location:http://localhost/faculdade/seminario/entrar.php');
+        header('Location:../entrar.php');
       }
     }
 

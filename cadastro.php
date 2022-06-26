@@ -96,7 +96,7 @@
     });
 
     $(".entrar").on('click', function(){
-        window.location.href= 'entrar.php';
+        window.location.href= './entrar.php';
     });
 </script>
 </html>

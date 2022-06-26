@@ -1,5 +1,6 @@
 <?php 
 
+require_once '../../database/database.class.php';
 require_once('clients.php');
 
 class Logs extends PDO{
@@ -10,7 +11,7 @@ class Logs extends PDO{
 
     public function __construct($id){
         $this->id_user = $id; 
-        $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', '');
+        $this->conn = Database::conn();
     }
 
     private function getUser(){

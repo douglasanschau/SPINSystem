@@ -105,7 +105,7 @@
   });
 
   $('.cadastrese').on('click', function(){
-    window.location.href= 'cadastrese.php';
+    window.location.href= './cadastro.php';
   });
 
    
