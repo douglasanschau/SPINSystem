@@ -6,7 +6,7 @@
        <link rel='stylesheet' href='styles/reset.css'>
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <link rel='stylesheet' href='styles/style-entrar.css'>
+       <link rel='stylesheet' href='styles/style-entrar1.css'>
        <title> Login - Site</title>
    </head>
    <body>

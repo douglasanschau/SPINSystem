@@ -13,7 +13,7 @@ class Register {
        $this->name = $_POST['nome-user'];
        $this->company = $_POST['empresa-user'];
        $this->email = $_POST['email-user'];
-       $this->password = $_POST['senha-user'];
+       $this->password = md5($_POST['senha-user']);
     }
 
     public function getName(){
@@ -34,12 +34,19 @@ class Register {
 
     public function register(){
         $database = new DatabaseLogin();
-        $register = $database->newAdm($this->company, $this->email, $this->name, md5($this->password));
+        $register = $database->newAdm($this->company, $this->email, $this->name, $this->password);
         return $register;
+    }
+
+    public function verifyUserAccess(){
+        $database = new DatabaseLogin();
+        $access = $database->Access($this->email, $this->password);
+        return $access;
     }
 
 
 }
+
     $register_admin = new Register();
     $new_user = $register_admin->register();
     if($new_user == false){
@@ -51,5 +58,11 @@ class Register {
         session_start();
         $_SESSION['user'] = ['nome' => $access['name'], 'email' => $email, 'empresa' => $access['id'], 'acesso' =>  $access['admin'], 'id' => $access['id_user']];
         header('Location:../app/index.php');
+        header('Location:http://localhost/faculdade/seminario/cadastrese.php');
+    } else{
+        $user = $register_admin->verifyUserAccess();
+        session_start();
+        $_SESSION['user'] = ['nome' => $access['name'], 'email' => $email, 'empresa' => $access['id'], 'acesso' =>  $access['admin'], 'id' => $access['id_user']];
+        header('Location:http://localhost/faculdade/seminario/app/home-app.php');
     }
 ?>

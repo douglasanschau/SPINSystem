@@ -174,6 +174,7 @@
          dataType:'json', 
          data: {negocios : negocios},
          success: function(response){
+             console.log(response);
              response.forEach(function(negocio){
                 atualizaNegocios(negocio);
              });
@@ -182,7 +183,7 @@
    }
 
    function atualizaNegocios(negocio){
-    let valor = negocio.value != null ? numberFormat(negocio.value.toFixed(2)) : 0;
+    let valor = negocio.value != null ? numberFormat(negocio.value) : 0;
     $html = `<div class='negocio card'>
                <a href='#' class='acessa-negocio' rel-id='${negocio.id}' rel-company="${negocio.company}" style='text-decoration:none;'>
                     <h5 class='card-title text-dark'>
@@ -207,7 +208,7 @@
    }
 
    function numberFormat(number){
-       number.toLocaleString('pt-BR');
+       parseFloat(number).toFixed(2);
        return number;
    }
 
