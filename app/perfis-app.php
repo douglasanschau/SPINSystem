@@ -149,6 +149,7 @@
                   formData.append('id', $('#id_usuario').val());
                   foto = $('#input-img')[0];
                   formData.append('foto', foto.files[0]);
+                  console.log(foto.files[0]);
                   $.ajax({
                      url: 'perfil-config.php',
                      type: 'post',                
@@ -156,7 +157,7 @@
                      cache: false,
                      contentType: false,
                      processData: false,
-                     success: function(){
+                     success: function(response){
                         window.location.reload();
                      }
                   });

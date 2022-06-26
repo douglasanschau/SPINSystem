@@ -10,7 +10,7 @@ class Logs extends PDO{
 
     public function __construct($id){
         $this->id_user = $id; 
-        $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', '');
+        $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', 'root');
     }
 
     private function getUser(){

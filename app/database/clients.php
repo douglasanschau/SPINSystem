@@ -6,7 +6,7 @@ class Clients extends PDO {
    private $conn;
    
    public function __construct() {
-     $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', '');
+     $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', 'root');
    }
 
    public function newClient($id_company, $company, $contact, $email, $phone){

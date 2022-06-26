@@ -4,7 +4,7 @@ class Users  extends PDO{
     private $conn;
 
     public function __construct(){
-       $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', '');
+       $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', 'root');
     }
 
     public function newUser($id_company, $name, $email, $cpf = null, $admin){

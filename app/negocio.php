@@ -215,6 +215,11 @@
     $("#telefone-contato").mask('(00) 00000-0000', {reverse:false});
 
 
+    function numberFormat(number){
+       number.toLocaleString('pt-BR');
+       return number;
+    }
+
     $('.status-negocio').on('click', function(){
         status = $(this).attr('rel');
         texto = $(this).text();
@@ -253,7 +258,9 @@
        } else{
          $(".valor-negocio").addClass('text-success');
        }
-       $('.valor-produtos').html(numberFormat(negocio.value.toFixed(2)));
+       if(negocio.value != undefined){
+        $('.valor-produtos').html(numberFormat(negocio.value));
+       }
     }
 
     $('.valor-negocio').on('click', function(){
@@ -261,11 +268,6 @@
       $('#modalValorNegocio').modal('show');
     })
 
-
-    function numberFormat(number){
-       number.toLocaleString('pt-BR');
-       return number;
-   }
 
    $('.progress').on('click', function(){
      nova_etapa = $(this).attr('rel-etapa');

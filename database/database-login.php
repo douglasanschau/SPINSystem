@@ -5,7 +5,7 @@ class DatabaseLogin extends PDO {
     private $conn;
 
     public function __construct(){
-       $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', '');
+       $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost','root', 'root');
     }
 
     public function newAdm($company, $email, $name, $password){
@@ -15,7 +15,6 @@ class DatabaseLogin extends PDO {
        } 
         //Cadastro Empresa 
         $register = $this->conn->prepare('INSERT INTO company (name, user, email, password) VALUES (:COMPANY, :USER, :EMAIL, :PASSWORD)');
-        $password = md5($password);
         $register->bindParam(':COMPANY', $company); $register->bindParam(':USER', $name);
         $register->bindParam(':EMAIL', $email);$register->bindParam(':PASSWORD', $password);
         $register->execute();
@@ -46,10 +45,17 @@ class DatabaseLogin extends PDO {
         if(!$user){
             return false;
         }
-        $new_password = md5('1234'); $id = intval($user['id']);
+        $new_password = md5('1234'); 
+        $id = intval($user['id']);
         $password = $this->conn->prepare("UPDATE company SET password = :PASSWORD  WHERE id = :ID");
         $password->bindParam(':PASSWORD', $new_password); 
         $password->bindParam(':ID', $id);
+        $password->execute();
+
+        $password = $this->conn->prepare("UPDATE users SET password = :PASSWORD  WHERE id_company = :ID && email = :EMAIL");
+        $password->bindParam(':PASSWORD', $new_password); 
+        $password->bindParam(':ID', $id);
+        $password->bindParam(':EMAIL', $email);
         $password->execute();
         return true;
     }
