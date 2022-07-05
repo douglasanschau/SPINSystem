@@ -14,8 +14,8 @@
        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script> 
        <script type="text/javascript" src="js/bootstrap.js"></script> 
-       <link rel='stylesheet' href='styles/reset.css'>
-       <link rel='stylesheet' href='styles/app-perfis02.css'>
+       <link rel='stylesheet' href='../assets/css/app/reset.css'>
+       <link rel='stylesheet' href='../assets/css/app/app-perfis.css'>
        <title> Perfis - Spin System </title>
     </head>
 
@@ -25,7 +25,7 @@
     <body>
 
          <header>
-             <?php require_once('layouts.fixos/nav-principal.php') ?>
+             <?php require_once('layouts-fixos/nav-principal.php') ?>
          </header>
 
          
@@ -114,7 +114,7 @@
 
 
         <footer>
-                <?php  require_once('layouts.fixos/footer.php'); ?>
+                <?php  require_once('layouts-fixos/footer.php'); ?>
         </footer>
          
     </body>
@@ -149,6 +149,7 @@
                   formData.append('id', $('#id_usuario').val());
                   foto = $('#input-img')[0];
                   formData.append('foto', foto.files[0]);
+                  console.log(foto.files[0]);
                   $.ajax({
                      url: 'perfil-config.php',
                      type: 'post',                
@@ -156,7 +157,7 @@
                      cache: false,
                      contentType: false,
                      processData: false,
-                     success: function(){
+                     success: function(response){
                         window.location.reload();
                      }
                   });

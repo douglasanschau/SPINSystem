@@ -122,13 +122,13 @@
      function produtosNegocio(produto){
           let preco = 0;
           if(produto.value != undefined){
-             preco = produto.quantity * produto.value.toFixed(2);
+             preco = produto.quantity * produto.value;
           }
           html = `<tr class="produto-${produto.id}">
                      <td rel='${produto.id}'>${produto.product}</td>
                      <td rel='${produto.id}' class="text-center">${produto.quantity}</td>
                      <td rel='${produto.id}' >R$${produto.value}</td>
-                     <td rel='${produto.id}' >R$${preco}</td>
+                     <td rel='${produto.id}' >R$${numberFormat(preco)}</td>
                      <td rel='${produto.id}' class="btn-actions">
                       <button class="btn btn-sm btn-info btn-edit-produto" title="Editar Produto" rel='${produto.id}' rel-product="${produto.id_product}">
                               <i class="material-icons">edit</i>
@@ -186,7 +186,7 @@
      $('.add-produtos').on('click', function(){
         $(this).addClass('d-none');
         price = $(".novo-produto #nome-produto option:selected").attr('rel');
-        $(".novo-produto #preco-produto").val(numberFormat(parseFloat(price)).toFixed(2));
+        $(".novo-produto #preco-produto").val(numberFormat(price));
         $('.novo-produto').removeClass('d-none');
      });
 
@@ -195,12 +195,12 @@
         $("#quantidade-produto").val('');
         if(id != undefined){
           price = $(`.produto-${id} #nome-produto option:selected`).attr('rel');
-          $(`.produto-${id} #preco-produto`).val("R$" + numberFormat(parseFloat(price)).toFixed(2));
-          $(`.produto-${id} #total-produto`).val("R$" + numberFormat(parseFloat(price)).toFixed(2));
+          $(`.produto-${id} #preco-produto`).val("R$" + numberFormat(price));
+          $(`.produto-${id} #total-produto`).val("R$" + numberFormat(price));
         } else {
           price = $(".novo-produto #nome-produto option:selected").attr('rel');
-          $(".novo-produto #preco-produto").val(numberFormat(parseFloat(price)).toFixed(2));
-          $(".novo-produto #total-produto").val(numberFormat(parseFloat(price)).toFixed(2));
+          $(".novo-produto #preco-produto").val(numberFormat(price));
+          $(".novo-produto #total-produto").val(numberFormat(price));
         }
      });
 
@@ -211,7 +211,7 @@
           if(isFinite(quantity)){
             price = $(`.produto-${id} #preco-produto`).val().replace("R$", "");
             price = quantity * parseFloat(price);
-            $(`.produto-${id} #total-produto`).val("R$" + numberFormat(price).toFixed(2));
+            $(`.produto-${id} #total-produto`).val("R$" + numberFormat(price));
           } else {
             $(`.produto-${id} #total-produto`).val("");
           }
@@ -220,7 +220,7 @@
           if(isFinite(quantity)){
             price = $(`.novo-produto #preco-produto`).val().replace("R$", "");
             price = quantity * parseFloat(price);
-            $(".novo-produto #total-produto").val(numberFormat(parseFloat(price)).toFixed(2));
+            $(".novo-produto #total-produto").val(numberFormat(price));
           } else {
             $(".novo-produto #total-produto").val("");
           }
@@ -233,7 +233,7 @@
      })
 
      $('.btn-novo-produto').on('click', function(){
-       dados = {'id_produto' : $('.novo-produto #nome-produto option:selected').val(), 'id_empresa': $('#modalValorNegocio #id_empresa').val(),
+       dados = {'id_produto' : $('.novo-produto #nome-produto option:selected').val(), 'id_empresa': $('#modalValorNegocio #id_negocio').val(),
                 'preco': $(`.novo-produto #total-produto`).val(), 'quantidade': $(`.novo-produto #quantidade-produto`).val()};
        $.ajax({
           url: 'negocio-config.php',
@@ -247,7 +247,7 @@
                   text: 'Produto cadastrado com sucesso',
                   icon: 'success'
                 });
-              valor = numberFormat(response.value[0]).toFixed(2);
+              valor = numberFormat(response.value[0]);
               $('.valor-produtos').html(valor);
               produtosNegocio(response.product[0]);
             } else if(response.atualizar){
@@ -279,7 +279,7 @@
                   text: 'Produto editado com sucesso.',
                   icon: 'success'
                });
-               valor = numberFormat(response.value[0]).toFixed(2);
+               valor = numberFormat(response.value[0]);
                $('.valor-produtos').html(valor);
                $('.btn-voltar').trigger('click');
              } else {
@@ -308,7 +308,7 @@
                   icon: 'success'
                });
                $(`.produto-${id}`).remove();
-               valor = numberFormat(response.value[0]).toFixed(2);
+               valor = numberFormat(response.value[0]);
                $('.valor-produtos').html(valor);
             }
          }
