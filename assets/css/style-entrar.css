@@ -1,0 +1,106 @@
+@import 'style.css';
+
+.cadastrese{
+    position: absolute;
+    top:15px;
+    right:50px;
+    background-color: #3B83BD;
+}
+
+.section-login{
+    margin: 8% 25% 8% 25%; 
+}
+
+.section-login h5, .section-nova-senha h5{
+    border-top:#CCCCCC solid 3px;
+    border-left:#CCCCCC solid 3px;
+    border-right:#CCCCCC solid 3px;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    font-size: 22px;
+    font-weight:bold;
+    box-shadow: 1px 1px 1px 1px #948e8e ;
+
+}
+
+.formulario-login{
+    padding: 3% 8%;
+    border:#CCCCCC solid 3px;
+    box-shadow: 1px 1px 1px 1px #948e8e ;
+
+}
+
+.formulario-login label {
+   font-size: 18px;
+ }
+
+.formulario-login input {
+   display:block;
+   margin: 2px 0 15px 0;
+   width:98%;
+   padding:8px;
+}
+
+.login{
+    margin-top: 2%;
+    width:55%;
+    padding: 15px;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;   
+    background-color: #28a528;
+    color: #FFFFFF;
+    font-weight:bold;
+    font-size: 15px;
+    text-transform:uppercase;
+    float:left;
+}
+
+.esqueci-senha{
+    margin: 2% 3%;
+    width:35%;
+    padding: 15px;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;   
+    background-color: #3B83BD;
+    color: #FFFFFF;
+    font-weight:bold;
+    font-size: 15px;
+    text-transform:uppercase;
+}
+
+.section-nova-senha{
+    margin: 8% 25% 15% 25%; 
+    display:none;
+}
+
+.envia-nova-senha {
+    margin:2% 0 0 8%;
+    width:80%;
+    padding: 15px;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;   
+    background-color: #3B83BD;
+    color: #FFFFFF;
+    font-weight:bold;
+    font-size: 15px;
+    text-transform:uppercase;
+}
+.erro{
+    width:95%;
+}
+
+.sucesso {
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #2298f8;
+    color:#FFFFFF;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-align:center;
+    width:95%;
+    margin: 1% 0 0 1%;
+    display:none;
+}

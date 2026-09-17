@@ -14,15 +14,15 @@
        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
        <script type="text/javascript" src="js/bootstrap.js"></script>
-       <link rel='stylesheet' href='styles/reset.css'>
-       <link rel='stylesheet' href='styles/app-negocios02.css'>
+       <link rel='stylesheet' href='../assets/css/app/reset.css'>
+       <link rel='stylesheet' href='../assets/css/app/app-negocios.css'>
        <title> Negócios - Spin System </title>
     </head>
 
     <?php 
      session_start();
      if(!isset($_SESSION['perfis']['foto'])){
-         $_SESSION['perfis']['foto'] = $_SESSION['user']['foto'];
+         $_SESSION['perfis']['foto'] = $_SESSION['user']['foto'] ?? '../assets/image/daniel.jpg';
      }
      if(!isset($_SESSION['perfis']['nome'])){
         $_SESSION['perfis']['nome'] = $_SESSION['user']['nome'];
@@ -35,7 +35,7 @@
     <body>
 
          <header>
-             <?php require_once('layouts.fixos/nav-principal.php') ?>
+             <?php require_once('layouts-fixos/nav-principal.php') ?>
          </header>
 
          
@@ -135,7 +135,7 @@
 
 
         <footer>
-                <?php  require_once('layouts.fixos/footer.php'); ?>
+                <?php  require_once('layouts-fixos/footer.php'); ?>
         </footer>
     </body>
 
@@ -174,6 +174,7 @@
          dataType:'json', 
          data: {negocios : negocios},
          success: function(response){
+             console.log(response);
              response.forEach(function(negocio){
                 atualizaNegocios(negocio);
              });
@@ -182,7 +183,7 @@
    }
 
    function atualizaNegocios(negocio){
-    let valor = negocio.value != null ? numberFormat(negocio.value.toFixed(2)) : 0;
+    let valor = negocio.value != null ? numberFormat(negocio.value) : 0;
     $html = `<div class='negocio card'>
                <a href='#' class='acessa-negocio' rel-id='${negocio.id}' rel-company="${negocio.company}" style='text-decoration:none;'>
                     <h5 class='card-title text-dark'>
@@ -207,7 +208,7 @@
    }
 
    function numberFormat(number){
-       number.toLocaleString('pt-BR');
+       parseFloat(number).toFixed(2);
        return number;
    }
 

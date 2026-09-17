@@ -18,8 +18,8 @@
        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
        <script type="text/javascript" src="js/bootstrap.js"></script>
-       <link rel='stylesheet' href='styles/reset.css'>
-       <link rel='stylesheet' href='styles/negocio.css'>
+       <link rel='stylesheet' href='../assets/css/app/reset.css'>
+       <link rel='stylesheet' href='../assets/css/app/negocio.css'>
        <title> 
            <?php 
            if(isset($_SESSION['negocio']['nome'])){
@@ -35,7 +35,7 @@
     <body>
 
          <header>
-             <?php require_once('layouts.fixos/nav-principal.php');?>
+             <?php require_once('layouts-fixos/nav-principal.php');?>
          </header>
 
          
@@ -185,7 +185,7 @@
 
 
         <footer>
-                <?php  require_once('layouts.fixos/footer.php'); ?>
+                <?php  require_once('layouts-fixos/footer.php'); ?>
         </footer>
     </body>
      <?php 
@@ -214,6 +214,11 @@
     $("#cnpj-empresa").mask('000.000.000.0000/00', {reverse:false});
     $("#telefone-contato").mask('(00) 00000-0000', {reverse:false});
 
+
+    function numberFormat(number){
+       number.toLocaleString('pt-BR');
+       return number;
+    }
 
     $('.status-negocio').on('click', function(){
         status = $(this).attr('rel');
@@ -253,7 +258,9 @@
        } else{
          $(".valor-negocio").addClass('text-success');
        }
-       $('.valor-produtos').html(numberFormat(negocio.value.toFixed(2)));
+       if(negocio.value != undefined){
+        $('.valor-produtos').html(numberFormat(negocio.value));
+       }
     }
 
     $('.valor-negocio').on('click', function(){
@@ -261,11 +268,6 @@
       $('#modalValorNegocio').modal('show');
     })
 
-
-    function numberFormat(number){
-       number.toLocaleString('pt-BR');
-       return number;
-   }
 
    $('.progress').on('click', function(){
      nova_etapa = $(this).attr('rel-etapa');

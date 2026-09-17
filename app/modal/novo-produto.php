@@ -55,7 +55,7 @@
                     type: 'post',
                     data: {novo_produto : novo_produto},
                     success:function(response){
-                       if(response.trim() == 'produto_cadastrado'){
+                       if(response.trim() == 'novo_produto'){
                         Swal.fire({
                             title:'Produto Cadastrado!',
                             text: 'Produto cadastrado com sucesso!',

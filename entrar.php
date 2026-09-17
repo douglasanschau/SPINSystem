@@ -3,19 +3,19 @@
    <head>
        <meta charset='utf-8'>
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel='stylesheet' href='styles/reset.css'>
+       <link rel='stylesheet' href='./assets/css/reset.css'>
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <link rel='stylesheet' href='styles/style-entrar.css'>
+       <link rel='stylesheet' href='./assets/css/style-entrar.css'>
        <title> Login - Site</title>
    </head>
    <body>
      <header>
          <nav class='nav-principal'>
              <ul>
-                 <li><a href='home.html'>Home</a></li>
-                 <li><a href='planos.html'>Planos</a></li>
-                 <li><a href='contatenos.html'>Contate-nos</a></li>
+                <li><a href='./index.php'>Home</a></li>
+                <li><a href='./planos.php'>Planos</a></li>
+                <li><a href='./contato.php'>Contate-nos</a></li>
              </ul>
              <button class='cadastrese'>Cadastre-se</button>
          </nav>
@@ -105,7 +105,7 @@
   });
 
   $('.cadastrese').on('click', function(){
-    window.location.href= 'cadastrese.php';
+    window.location.href= './cadastro.php';
   });
 
    

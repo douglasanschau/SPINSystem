@@ -1,0 +1,61 @@
+html {
+    position:relative;
+    min-height:100%;
+}
+body{
+    background-color: #f1ecec;
+}
+
+.nav-home{
+    padding: 10px 20px;
+    background-color:rgba(37, 37, 175, 0.726);
+    box-shadow: 1px 1px 5px #000000; 
+}
+
+.nav-home a {
+    color:#ffffff;
+}
+
+.nav-home a:hover {
+    color:#ffffff;
+    transform:scale(1.1);
+}
+
+.icon-nav{
+    float:left;
+    padding-right:2px;
+}
+
+.dropdown-configs{
+    margin:9px;
+    min-width:200px;
+
+}
+
+.dropdown-configs, .dropdown-configs a:hover{
+    min-width:200px;
+    border:#000000;
+    background-color: rgba(37, 37, 175, 0.726);
+
+}
+
+.dropdown-configs a:hover{
+    transform:none;
+    text-decoration:none;
+}
+
+.main-app{
+    margin: 5% 5% 8% 5%;
+}
+
+.footer-app {
+    padding: 10px 20px;
+    background-color:rgba(37, 37, 175, 0.726);
+    box-shadow: 1px 1px 5px #000000;
+    text-align:center; 
+    color:white;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+}
+

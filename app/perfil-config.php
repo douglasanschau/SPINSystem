@@ -1,5 +1,6 @@
 <?php 
-  
+
+
 $id_user = isset($_POST['id']) ? $_POST['id'] : null;
 $photo = isset($_FILES['foto']) ? $_FILES['foto'] : null;
 $data = isset($_POST['dados']) ? $_POST['dados']: null;
@@ -7,25 +8,31 @@ $new_user = isset($_POST['novo_usuario'][0]) ?  $_POST['novo_usuario'][0] : null
 
  require_once('database/users.php');
  require_once('database/logs.php');
- 
+
  $connection = new Users();
  session_start();
 
 //Altera foto de perfil de usuário e registra log
- if(isset($photo) && isset($id_user)){
+ if(isset($photo)){
     $new_name = $photo['name'];
     $dir = __DIR__.'/photos/';
     if(!is_dir($dir)){
         mkdir($dir);
     }  
 
+    $id = $_SESSION['user']['id'];
+
     $addPhotoUser = 'UPDATE users set photo = :PHOTO where id = :ID';
-    $params = ['ID' => $id_user, 'PHOTO' => 'photos/'.$new_name];   
-    $connection->updateUser($addPhotoUser, $params, $id_user); 
+    $params = ['ID' => $id, 'PHOTO' => 'photos/'.$new_name];   
+    $connection->updateUser($addPhotoUser, $params, $id); 
 
-    move_uploaded_file($photo['tmp_name'], $dir.$new_name);
+    try{
+      move_uploaded_file($photo['tmp_name'], $dir.$new_name);
+    }catch(\Exception $e){
+       var_dump($e->getMessage());die();
+    }
 
-    $log = new Logs($id_user);
+    $log = new Logs($id);
     $type = 'A'; $description = "user_name alterou sua foto de perfil.";
     $log->saveLog($type, $description);
     

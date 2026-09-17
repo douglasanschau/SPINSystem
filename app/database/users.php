@@ -1,10 +1,12 @@
 <?php
+    require_once '../database/database.class.php';
+
 
 class Users  extends PDO{
     private $conn;
 
     public function __construct(){
-       $this->conn = new PDO('mysql:dbname=uniasselvi;host=localhost', 'root', '');
+        $this->conn = Database::conn();
     }
 
     public function newUser($id_company, $name, $email, $cpf = null, $admin){
